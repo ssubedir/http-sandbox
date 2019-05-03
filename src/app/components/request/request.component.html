@@ -1,0 +1,59 @@
+<div>
+  <section class="hero section is-small is-block-touch is-block-desktop">
+    <div class="container">
+      <div class="columns">
+
+        <div class="column">
+            <h1
+            class="subtitle is-size-1-fullhd is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-centered has-text-dark">
+            <strong class="has-text-weight-bold">Request</strong>
+          </h1>
+          <div class="field has-addons">
+            <div class="control">
+              <div class="select">
+                <select id="gprequest">
+                  <option>GET</option>
+                  <option>POST</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="field">
+              <div class="control">
+                <input id="input-path" class="input is-info" type="text" placeholder="https://">
+              </div>
+            </div>
+            
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <textarea id="data-input" class="textarea is-info" rows="10" placeholder="data"></textarea>
+            </div>
+          </div>
+
+          <button (click)="_fill()" class="button is-info is-pulled-right">Sample Json</button>
+          <a class="button" class="button is-primary" (click)="_setup()">Send Request</a>
+        </div>
+
+
+
+        <div class="column">
+            <h1
+            class="subtitle is-size-1-fullhd is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-centered has-text-dark">
+            <strong class="has-text-weight-bold">Response</strong>
+          </h1>
+          <br>
+          <br>
+          <div class="field">
+            <div class="control">
+              <textarea id="http-response" class="textarea is-success" rows="10" placeholder=""></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!---->
+  </section>
+
+</div>

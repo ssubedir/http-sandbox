@@ -2,7 +2,6 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { HttpClientModule, HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, Operator } from 'rxjs';
 import { Config } from 'protractor';
-
 @Component({
   selector: 'app-request',
   templateUrl: './request.component.html',
@@ -15,10 +14,10 @@ export class RequestComponent implements OnInit {
   http:HttpClient;
   input:string;
   method:string;
+  ftype:string;
   path:string;
   data: string;
   response:any;
-
   constructor(private _http:HttpClient) {
     this.http = _http;
    }
@@ -31,9 +30,9 @@ export class RequestComponent implements OnInit {
     this.method = (document.getElementById('gprequest')  as HTMLSelectElement).value;
     this.path = (document.getElementById('input-path')  as HTMLSelectElement).value;
     this.data = (document.getElementById('data-input') as HTMLSelectElement).value;
+    this.ftype = (document.getElementById('filetype')  as HTMLSelectElement).value;
 
-    
-    if(this.method == "GET"){
+    if(this.method == "GET" && this.ftype == "JSON"){
       // get request not empty
       try{
         let obs =  this.http.get(this.path);
@@ -55,14 +54,11 @@ export class RequestComponent implements OnInit {
       }
 
     } 
-    else if(this.method == "POST"){
+    else if(this.method == "POST" && this.ftype == "JSON"){
       // post request
 
       try{
-      //   let obs1 = this.http.post(this.path,this.data)
-      //   .toPromise().then(response => {(document.getElementById('http-response')  as HTMLSelectElement).value = JSON.stringify(response, null, 2)
       
-      // });
 
       let obs =  this.http.post(this.path,this.data);
         obs.subscribe(
@@ -83,7 +79,17 @@ export class RequestComponent implements OnInit {
         console.log(error);
       }
 
-    }   
+    }
+    else if(this.method == "POST" && this.ftype == "XML"){
+
+
+      
+    }  
+    else if(this.method == "GET" && this.ftype == "XML"){
+
+
+      
+    } 
     else{
       // error
     }
@@ -100,6 +106,7 @@ export class RequestComponent implements OnInit {
     (document.getElementById('data-input') as HTMLSelectElement).value = JSON.stringify(d, null, 2);
   }
 
+  
   objToString (obj) {
     var str = '';
     for (var p in obj) {

@@ -43,13 +43,26 @@
             class="subtitle is-size-1-fullhd is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-centered has-text-dark">
             <strong class="has-text-weight-bold">Response</strong>
           </h1>
-          <br>
-          <br>
+          
+
+          <div class="field has-addons is-pulled-right">
+              <div class="control">
+                <div class="select">
+                  <select id="filetype">
+                    <option>JSON</option>
+                    <option>XML</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+
           <div class="field">
             <div class="control">
               <textarea id="http-response" class="textarea is-success" rows="10" placeholder=""></textarea>
             </div>
           </div>
+          <app-download></app-download>
         </div>
       </div>
     </div>

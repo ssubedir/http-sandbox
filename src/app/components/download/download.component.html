@@ -1,0 +1,27 @@
+<div>
+    <p id="error"></p>
+
+  <div class="field has-addons is-pulled-right">
+    <div class="control">
+      <div class="select">
+        <select id="filetype">
+          <option>JSON</option>
+          <option>XML</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="field">
+      <div class="control">
+        <a class="button" (click)="downloadFile()">Download</a>      
+      </div>
+    </div>
+   
+    <div class="modal" is="error-modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <p>Test</p>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+</div>

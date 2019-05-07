@@ -37,7 +37,7 @@ export class DownloadComponent implements OnInit {
       if(data==""){ // empty
         (document.getElementById('error')  as HTMLSelectElement).value = "Empty Response."
       }else{ // not empty
-        let fname:string = "response.js";
+        let fname:string = "response.json";
         this.download(fname,data);
       }
     }

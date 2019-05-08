@@ -1,0 +1,40 @@
+<div>
+  <section class="hero section is-small is-block-touch is-block-desktop">
+    <div class="container">
+
+        <div class="column">
+            <h1
+            class="subtitle is-size-1-fullhd is-size-2-desktop is-size-2-tablet is-size-3-mobile has-text-centered has-text-dark">
+            <strong class="has-text-weight-bold">History</strong>
+          </h1>
+        </div>
+        <div class="column">
+            <div class="card" *ngFor="let h of _history">
+                <header class="card-header">
+                  <p class="card-header-title">
+                      {{extracturl(h)}}
+                  </p>
+                  
+                  <a class="card-header-icon" ng-init="count=0" (click)="removeh(h)" aria-label="more options">
+                      <span class="icon">
+                        <i class="fas fa-window-close " aria-hidden="true"></i>
+                      </span>
+                    </a>
+                </header>
+                  <div class="card-content"  >
+                    <div class="content">                      
+                        <code>{{extract(h)}}</code>
+                        <br>
+                    </div>
+                  </div>
+                  <footer class="card-footer">
+                  
+                  </footer>
+              </div>
+              <br>
+            </div>
+    </div>
+    <!---->
+  </section>
+
+</div>

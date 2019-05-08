@@ -7,13 +7,15 @@ import { SandboxComponent } from './components/sandbox/sandbox.component';
 import { RequestComponent } from './components/request/request.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DownloadComponent } from './components/download/download.component';
+import { HistoryComponent } from './components/history/history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SandboxComponent,
     RequestComponent,
-    DownloadComponent
+    DownloadComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

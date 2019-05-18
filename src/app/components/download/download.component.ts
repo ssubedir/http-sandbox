@@ -27,10 +27,10 @@ export class DownloadComponent implements OnInit {
     document.body.removeChild(element);
   }
   downloadFile(){
-    let data:string = (document.getElementById('http-response')  as HTMLSelectElement).value;
-    
+    //let data:string = (document.getElementById('http-response')  as HTMLSelectElement).value;
+    let data:string = JSON.stringify(localStorage.getItem("response"),null,3);
 
-    this.method = (document.getElementById('filetype')  as HTMLSelectElement).value;
+    this.method = "JSON";
 
 
     if(this.method == "JSON"){

@@ -9,12 +9,9 @@ export class HistoryComponent implements OnInit {
   
   _history:any;
   json:any = JSON; 
-  constructor(private ref: ChangeDetectorRef) {    
-    setInterval(() => {
-      this._history =  JSON.parse(localStorage.getItem("history"));
-      this._history.reverse();
-      }, 2000);
-    }
+  constructor() {    
+    
+  }
 
   ngOnInit() {
     

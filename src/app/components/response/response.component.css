@@ -1,0 +1,10 @@
+.treeFF-invisible {
+  display: none;
+}
+
+.treeFF ul,
+.treeFF li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}

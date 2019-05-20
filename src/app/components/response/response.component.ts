@@ -134,9 +134,7 @@ export class ResponseComponent implements OnInit {
   ngOnInit() {
   }
 
-  getwindow(){
-    return this.window;
-  }
+  
 
   code(a){
     console.log("JSON."+a);

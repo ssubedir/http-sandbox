@@ -116,10 +116,9 @@ export class FileDatabase {
 export class ResponseComponent implements OnInit {
 
   
-
-  nestedTreeControl: NestedTreeControl<FileNode>;
+  private localStorage = window.localStorage; 
+    nestedTreeControl: NestedTreeControl<FileNode>;
   nestedDataSource: MatTreeNestedDataSource<FileNode>;
-
   constructor(database: FileDatabase) {
     this.nestedTreeControl = new NestedTreeControl<FileNode>(this._getChildren);
     this.nestedDataSource = new MatTreeNestedDataSource();
@@ -133,6 +132,10 @@ export class ResponseComponent implements OnInit {
 
   
   ngOnInit() {
+  }
+
+  getwindow(){
+    return this.window;
   }
 
   code(a){
